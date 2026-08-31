@@ -1,7 +1,6 @@
 import {Client} from 'pg'
 
 async function  query (queryObject) {
-    console.log('VARIAVEL QUE NÃO EXITE MAIS',process.env.POSTGRES_DATABASE)
     const client = new Client({
         host: process.env.POSTGRES_HOST,
         port: process.env.POSTGRES_PORT,
