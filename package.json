@@ -4,8 +4,11 @@
   "description": "Projeto baseado no Tab News",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev",
+    "dev": "npm run services:up && next dev",
     "lint:check": "prettier --check .",
+    "services:up":"docker compose -f infra/compose.yaml up -d",
+    "services:stop":"docker compose -f infra/compose.yaml stop",
+    "services:down":"docker compose -f infra/compose.yaml down",
     "lint:fix": "prettier --write .",
     "test": "jest",
     "test:watch": "jest --watchAll"
